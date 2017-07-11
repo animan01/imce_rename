@@ -11,8 +11,9 @@
    * Init handler for Rename.
    */
   imce.bind('init', imce.renameInit = function () {
-    var Premission = imce.hasPermission('rename_files') || imce.hasPermission('rename_folders');
-    if (Premission) {
+    var check_perm = imce.hasPermission('rename_files') || imce.hasPermission('rename_folders');
+
+    if (check_perm) {
       // Add toolbar button.
       imce.addTbb('rename', {
         title: Drupal.t('Rename'),
@@ -48,8 +49,8 @@
    *    Return object form.
    */
   imce.createRenameForm = function () {
-
     var form = imce.renameForm;
+
     if (!form) {
       form = imce.renameForm = imce.createEl('<form class="imce-rename-form">' +
           '<div class="imce-form-item">' +

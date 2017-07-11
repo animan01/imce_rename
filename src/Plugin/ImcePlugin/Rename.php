@@ -33,9 +33,9 @@ class Rename extends ImcePluginBase {
    * {@inheritdoc}
    */
   public function buildPage(array &$page, ImceFM $fm) {
-    $premission = $fm->hasPermission('rename_files') || $fm->hasPermission('rename_folders');
-    // Check if delete permission exists.
-    if ($premission) {
+    $check_perm = $fm->hasPermission('rename_files') || $fm->hasPermission('rename_folders');
+    // Check if rename permission exists.
+    if ($check_perm) {
       $page['#attached']['library'][] = 'imce_rename_plugin/drupal.imce.rename';
     }
   }
