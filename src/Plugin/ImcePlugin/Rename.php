@@ -142,7 +142,7 @@ class Rename extends ImcePluginBase {
     $old_uri = $uri . '/' . $old_name;
 
     if (file_exists($new_uri)) {
-      drupal_set_message($this->t('Failed to rename file because "@old_item" already exists', [
+      drupal_set_message($this->t('Failed to rename folder because "@old_item" already exists', [
         '@old_item' => utf8_encode($old_name),
       ]), 'error');
       return;
