@@ -1,4 +1,4 @@
-name: 'IMCE Rename (D8)'
+name: 'IMCE Rename Plugin'
 type: module
 description: 'Plugin Rename for IMCE in order to rename image.'
 package: Media
