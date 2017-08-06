@@ -15,7 +15,7 @@ FEATURES & BENEFITS
 
 **IMCE Rename (D8) features**
 
-Module adds functionality renaming images 
+Module adds functionality renaming files and folders 
 from user interface of the 
 IMCE file browser (https://www.drupal.org/project/imce).
 
@@ -28,4 +28,4 @@ Settings page is located at:
 DEMO
 ----
 
-https://www.drupal.org/files/demo_1.gif
+https://www.drupal.org/files/demo.gif
