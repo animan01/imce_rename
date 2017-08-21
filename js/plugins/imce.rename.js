@@ -29,7 +29,7 @@
         if (imce.getSelection().length !== 0) {
           var items = imce.getSelection();
           // Get first selected item.
-          var name = name = items[0].name;
+          var name = items[0].name;
 
           if (items[0].type === 'file') {
             name = name.substr(0, name.lastIndexOf('.'));
