@@ -174,6 +174,8 @@ class Rename extends ImcePluginBase {
     $name = str_replace(' ', '-', $name);;
     // Delete special symbols.
     $name = preg_replace('/[^\w_-]+/u', '', $name);
+    // Set timestamp when name empty.
+    $name = empty($name) ? time() : $name;
 
     return $name;
   }
