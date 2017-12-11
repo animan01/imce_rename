@@ -2,5 +2,6 @@ name: 'IMCE Rename (D8)'
 type: module
 description: 'Plugin Rename for IMCE in order to rename image.'
 package: Media
+php: 7.0
 dependencies:
   - imce:imce

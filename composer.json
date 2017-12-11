@@ -18,6 +18,8 @@
     "issues": "https://www.drupal.org/project/issues/imce_rename_plugin",
     "source": "http://cgit.drupalcode.org/imce_rename_plugin"
   },
-  "require": {}
+  "require": {
+    "php" : "^7.0"
+  }
 }
 
