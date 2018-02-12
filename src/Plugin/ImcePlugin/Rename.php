@@ -3,8 +3,8 @@
 namespace Drupal\imce_rename_plugin\Plugin\ImcePlugin;
 
 use Drupal\imce\Imce;
-use Drupal\imce\ImcePluginBase;
 use Drupal\imce\ImceFM;
+use Drupal\imce\ImcePluginBase;
 
 /**
  * Defines Imce Rename plugin.
@@ -86,11 +86,11 @@ class Rename extends ImcePluginBase {
   public function renameFile(ImceFM $fm, string $old_name) {
     $new_name = $this->getNewName($fm);
     $folder = $fm->activeFolder;
-    $uri = $folder->getUri();
+    $uri = preg_match('/^public:\/\/$/', $folder->getUri()) >= 1 ? $folder->getUri() : $folder->getUri() . '/';
     // Add extension to file name.
     $new_name = $new_name . '.' . pathinfo($old_name, PATHINFO_EXTENSION);
-    $new_uri = $uri . '/' . $new_name;
-    $old_uri = $uri . '/' . $old_name;
+    $new_uri = $uri . $new_name;
+    $old_uri = $uri . $old_name;
 
     if (file_exists($new_uri)) {
       drupal_set_message($this->t('Failed to rename file because "@old_item" already exists', [
@@ -137,9 +137,9 @@ class Rename extends ImcePluginBase {
   public function renameFolder(ImceFM $fm, string $old_name) {
     $new_name = $this->getNewName($fm);
     $folder = $fm->activeFolder;
-    $uri = $folder->getUri();
-    $new_uri = $uri . '/' . $new_name;
-    $old_uri = $uri . '/' . $old_name;
+    $uri = preg_match('/^public:\/\/$/', $folder->getUri()) >= 1 ? $folder->getUri() : $folder->getUri() . '/';
+    $new_uri = $uri . $new_name;
+    $old_uri = $uri . $old_name;
 
     if (file_exists($new_uri)) {
       drupal_set_message($this->t('Failed to rename folder because "@old_item" already exists', [
