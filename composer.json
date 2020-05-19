@@ -19,7 +19,8 @@
     "source": "http://cgit.drupalcode.org/imce_rename_plugin"
   },
   "require": {
-    "php" : "^7.0"
+    "php" : "^7.0",
+    "ext-mbstring": "*"
   }
 }
 
